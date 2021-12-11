@@ -1,5 +1,0 @@
-flight# Origin Destination Available_Seats Class Fare Date 
-1 Karachi Islamabad 95 Economy 6000 11/24/2021 
-2 Lahore Karachi 160 Business 10000 11/1/2021 
-3 Multan Skirdu 65 Economy 5000 12/3/2021 
-4 Lahore Islamabad 50 Business 3000 1/3/2022 
