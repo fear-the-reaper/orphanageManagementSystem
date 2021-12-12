@@ -1,4 +1,4 @@
-import java.sql.Time;
+package application;
 import java.util.Date;
 
 public class Interview {

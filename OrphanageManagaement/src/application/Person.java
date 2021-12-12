@@ -1,7 +1,12 @@
+package application;
 
 import java.util.Date;
+import javax.persistence.Entity;
 
+@Entity
 public class Person {
+	
+	
 	private long cnic;
     private String name;
     private Date dateOfBirth;
