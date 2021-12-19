@@ -45,5 +45,9 @@ public class Orphanage {
 	public void setInterviewSchedule(InterviewSchedule interviewSchedule) {
 		this.interviewSchedule = interviewSchedule;
 	}
+	public static Boolean Login(String text, String text2) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 
 }
