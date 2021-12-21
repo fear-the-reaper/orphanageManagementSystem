@@ -1,10 +1,22 @@
 package businessLogic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
     private String country;
     private String city;
+	@Id
     private int postalCode;
     private int zipCode;
+
+	public Address() {
+
+	}
+
+
+
 	public String getCountry() {
 		return country;
 	}
@@ -27,6 +39,13 @@ public class Address {
 		return zipCode;
 	}
 	public void setZipCode(int zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public Address(String country, String city, int postalCode, int zipCode) {
+		this.country = country;
+		this.city = city;
+		this.postalCode = postalCode;
 		this.zipCode = zipCode;
 	}
 

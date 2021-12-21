@@ -1,9 +1,5 @@
 package businessLogic;
 
-import businessLogic.Address;
-import businessLogic.ContactInfo;
-import businessLogic.Person;
-
 import java.util.Date;
 
 public class Parent extends Person {

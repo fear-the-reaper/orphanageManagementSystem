@@ -9,7 +9,10 @@ public class Person {
     private String nationality;
     private Address address;
 
-    public Person(String name, Date dateOfBirth, String gender, String nationality, Address address) {
+	public Person() {
+	}
+
+	public Person(String name, Date dateOfBirth, String gender, String nationality, Address address) {
         this.setName(name);
         this.setDateOfBirth(dateOfBirth);
         this.setGender(gender);
