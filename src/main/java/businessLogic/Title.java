@@ -4,6 +4,13 @@ public class Title {
     private String name;
     private String summary;
     private String author;
+
+	public Title(String name, String summary, String author) {
+		this.name = name;
+		this.summary = summary;
+		this.author = author;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -21,5 +28,14 @@ public class Title {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	@Override
+	public String toString() {
+		return "Title{" +
+				"name='" + name + '\'' +
+				", summary='" + summary + '\'' +
+				", author='" + author + '\'' +
+				'}';
 	}
 }

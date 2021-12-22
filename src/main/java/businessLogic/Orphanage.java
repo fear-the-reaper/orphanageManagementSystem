@@ -1,6 +1,7 @@
 package businessLogic;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Orphanage {
     private Address address;
@@ -10,6 +11,7 @@ public class Orphanage {
 	private DonorCatalog donorCatalog;
 	public Orphanage() {
 		this.donorCatalog = new DonorCatalog();
+		this.donation_catalog = new DonationCatalog();
 	}
 
 	public DonorCatalog getDonorCatalog() {
@@ -61,5 +63,12 @@ public class Orphanage {
 	public void registerDonorHandler(String name, Date dateOfBirth, String gender, String nationality, Address address, ContactInfo contactInfo, int CNIC) {
 		this.donorCatalog.createDonor(name, address, dateOfBirth, gender, nationality, contactInfo, CNIC);
 	}
+
+	public void addDonation(ArrayList<Item> items){
+		System.out.println("FDF");
+		this.donation_catalog.addDonation(items);
+		System.out.println(this.donation_catalog.toString());
+	}
+
 
 }

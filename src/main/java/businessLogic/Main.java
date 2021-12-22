@@ -1,13 +1,7 @@
 package businessLogic;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args){
@@ -15,7 +9,17 @@ public class Main {
 
         System.out.println("YO?");
         Orphanage orphanage = new Orphanage();
-        orphanage.viewDonorHandler(444);
+        Date dateOfEntry = Date.valueOf("1999-10-21");
+        Toy toy = new Toy(1, dateOfEntry, "Spider-man", "Action figure");
+        java.util.Date utilDate = new java.util.Date();
+        Date currentDate = new Date(utilDate.getTime());
+        Title title = new Title("Tuesdays with Morrie", "summary", "Mitch Ablom");
+        Book book = new Book(3, currentDate, title, "penguin");
+        ArrayList<Item> items = new ArrayList<Item>();
+        items.add(toy);
+        items.add(book);
+        orphanage.addDonation(items);
+//        orphanage.viewDonorHandler(444);
 //        String info = "some Donor";
 //        String name = "Hussain";
 //        Date dateOfBirth = Date.valueOf("1999-10-21");
