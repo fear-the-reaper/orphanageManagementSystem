@@ -8,8 +8,8 @@ public class Child extends Person{
     private String status;
     private String backgroundDetails;
 
-    public Child(String name, Date dateOfBirth, String gender, String nationality, Address address, int childId, Date dateOfEntry, String status, String backgroundDetails) {
-        super(name, dateOfBirth, gender, nationality, address);
+    public Child(String cnic,String name, Date dateOfBirth, String gender, String nationality, Address address, int childId, Date dateOfEntry, String status, String backgroundDetails) {
+        super(cnic,name, dateOfBirth, gender, nationality, address);
         this.setChildId(childId);
         this.setDateOfEntry(dateOfEntry);
         this.setStatus(status);

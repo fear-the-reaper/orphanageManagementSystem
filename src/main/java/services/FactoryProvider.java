@@ -1,7 +1,6 @@
 package services;
 
-import businessLogic.ContactInfo;
-import businessLogic.Donor;
+import businessLogic.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -16,6 +15,16 @@ public class FactoryProvider {
             Configuration config = new Configuration().configure("hibernate.cfg.xml");
             config.addAnnotatedClass(Donor.class);
             config.addAnnotatedClass(ContactInfo.class);
+            config.addAnnotatedClass(Address.class);
+            config.addAnnotatedClass(Available_Slot.class);
+            config.addAnnotatedClass(Item.class);
+            config.addAnnotatedClass(Book.class);
+            config.addAnnotatedClass(Toy.class);
+            config.addAnnotatedClass(Title.class);
+            config.addAnnotatedClass(Donation.class);
+            config.addAnnotatedClass(Parent.class);
+            config.addAnnotatedClass(DonatedMoney.class);
+            config.addAnnotatedClass(Payment.class);
             ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
             factory = config.buildSessionFactory(reg);
         }

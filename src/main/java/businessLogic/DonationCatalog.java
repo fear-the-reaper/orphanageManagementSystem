@@ -1,5 +1,7 @@
 package businessLogic;
 
+import services.DbHandler;
+
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -34,10 +36,19 @@ public class DonationCatalog {
     }
 
 //    TODO: Creating donation -> add in List and in DB
-    public void addDonation(ArrayList<Item> items){
-        Date dateOfEntry = Date.valueOf("2021-10-21");
-        Donation newDonation = new Donation(items, dateOfEntry, 1);
-        this.donations.add(newDonation);
+    public Boolean addDonation(ArrayList<Item> items, int donorID){
+        java.util.Date utilDate = new java.util.Date();
+        Date currentDate = new Date(utilDate.getTime());
+        Donation newDonation = new Donation(items, currentDate, donorID);
+        DbHandler db = new DbHandler();
+        Boolean isSaved = db.saveDonation(newDonation);
+        if (isSaved){
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 
 

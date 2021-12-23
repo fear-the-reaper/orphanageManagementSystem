@@ -1,9 +1,15 @@
 package services;
 
-import businessLogic.Donor;
+import businessLogic.*;
+
+import java.util.List;
 
 public interface StorageHandler {
-    void saveDonor(Donor newDonor);
+    Boolean saveDonor(Donor newDonor);
     void updateDonor(Donor newDonor);
-    Donor getDonor(int donorId);
+    Donor getDonor(String donorId);
+    List<Available_Slot> getAllAvailableSlots();
+    void insertAvailableSlot(Available_Slot slot);
+    Boolean saveDonation(Donation donation);
+    Boolean saveInterivew(Interview interview);
 }

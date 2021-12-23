@@ -1,19 +1,29 @@
 package businessLogic;
 
+import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
 
+@Entity
+@Table(name = "available_slots_table")
 public class Available_Slot {
 
-	private int manager_id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int primaryKey;
 	private Date available_slot_date;
 	private Time available_slot_time;
-	public int getManager_id() {
-		return manager_id;
+
+	public Available_Slot() {
+
 	}
-	public void setManager_id(int manager_id) {
-		this.manager_id = manager_id;
+
+	public Available_Slot(Date available_slot_date, Time available_slot_time) {
+		this.available_slot_date = available_slot_date;
+		this.available_slot_time = available_slot_time;
 	}
+
+
 	public Date getAvailable_slot_date() {
 		return available_slot_date;
 	}
@@ -25,5 +35,14 @@ public class Available_Slot {
 	}
 	public void setAvailable_slot_time(Time available_slot_time) {
 		this.available_slot_time = available_slot_time;
+	}
+
+	@Override
+	public String toString() {
+		return "Available_Slot{" +
+				"primaryKey=" + primaryKey +
+				", available_slot_date=" + available_slot_date.toString() +
+				", available_slot_time=" + available_slot_time.toString() +
+				'}';
 	}
 }

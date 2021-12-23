@@ -1,14 +1,27 @@
 package businessLogic;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Title {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int primaryKey;
     private String name;
     private String summary;
     private String author;
+	@OneToMany(mappedBy = "title")
+	private List<Book> book;
 
 	public Title(String name, String summary, String author) {
 		this.name = name;
 		this.summary = summary;
 		this.author = author;
+	}
+
+	public Title() {
+
 	}
 
 	public String getName() {

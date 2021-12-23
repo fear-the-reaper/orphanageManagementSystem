@@ -15,5 +15,13 @@
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
       </Button>
+      <Button layoutX="235.0" layoutY="150.0" mnemonicParsing="false" onAction="#onpressRecordAdoption" prefHeight="41.0" prefWidth="281.0" style="-fx-background-color: black; -fx-border-width: 4px; -fx-border-color: #0DABB8; -fx-border-radius: 25px; -fx-background-radius: 30px;" text="Record Adoption" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

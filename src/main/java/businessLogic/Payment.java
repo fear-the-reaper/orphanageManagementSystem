@@ -1,12 +1,25 @@
 package businessLogic;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Payment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int primaryKey;
     private int amount;
     private String paymentMethod;
 
     public Payment(int amount, String paymentMethod) {
         this.amount = amount;
         this.paymentMethod = paymentMethod;
+    }
+
+    public Payment() {
+
     }
 
     public int getAmount() {

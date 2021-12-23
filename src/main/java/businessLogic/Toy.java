@@ -1,7 +1,10 @@
 package businessLogic;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.sql.Date;
 
+@Entity
 public class Toy extends Item {
     private String name;
     private String category;
@@ -10,6 +13,10 @@ public class Toy extends Item {
 		super(itemID, dateOfEntry);
 		this.name = name;
 		this.category = category;
+	}
+
+	public Toy() {
+
 	}
 
 	public String getName() {

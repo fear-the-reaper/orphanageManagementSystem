@@ -1,15 +1,24 @@
 package businessLogic;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.sql.Date;
 
+@Entity
 public class DonatedMoney extends Item{
     private int amount;
+    @OneToOne
     private Payment payment;
 
     public DonatedMoney(int itemID, Date dateOfEntry, int amount, Payment payment) {
         super(itemID, dateOfEntry);
         this.amount = amount;
         this.payment = payment;
+    }
+
+    public DonatedMoney() {
+
     }
 
     public int getAmount() {

@@ -1,24 +1,40 @@
 package businessLogic;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(name = "persons_table")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person {
+	@Id
+	private String cnic;
     private String name;
     private Date dateOfBirth;
     private String gender;
     private String nationality;
-    private Address address;
+    @OneToOne
+	private Address address;
 
-	public Person() {
-	}
-
-	public Person(String name, Date dateOfBirth, String gender, String nationality, Address address) {
-        this.setName(name);
+    public Person(String cnic,String name, Date dateOfBirth, String gender, String nationality, Address address) {
+        this.cnic = cnic;
+		this.setName(name);
         this.setDateOfBirth(dateOfBirth);
         this.setGender(gender);
         this.setNationality(nationality);
         this.setAddress(address);
     }
+    public Person(Person p)
+    {
+    	this.setCnic(p.cnic);
+    	this.setName(p.name);
+        this.setDateOfBirth(p.dateOfBirth);
+        this.setGender(p.gender);
+        this.setNationality(p.nationality);
+        this.setAddress(p.address);
+    }
+	public Person() {
+		
+	}
 
 	public String getName() {
 		return name;
@@ -58,5 +74,23 @@ public class Person {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public Person VerifyPerson(String cnic, String name2) {
+		
+		Person p=new Person();
+		//p.
+		// check for person from db by cnic
+		// if person exist return that person
+		//else return null
+		
+		return p;
+		
+	}
+	public String getCnic() {
+		return cnic;
+	}
+	public void setCnic(String cnic) {
+		this.cnic = cnic;
 	}
 }

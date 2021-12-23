@@ -1,10 +1,18 @@
 package businessLogic;
 
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
+@Table(name = "donations_table")
 public class Donation {
-    private ArrayList<Item> items;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int primaryKey;
+    @OneToMany
+    private List<Item> items;
     private Date donationDate;
     private int donorID;
 
@@ -14,7 +22,11 @@ public class Donation {
         this.donorID = donorID;
     }
 
-    public ArrayList<Item> getItems() {
+    public Donation() {
+        this.items = new ArrayList<Item>();
+    }
+
+    public List<Item> getItems() {
         return items;
     }
 
@@ -42,11 +54,11 @@ public class Donation {
     public String toString() {
         String itemsStr = "";
         for (Item item: items) {
-            itemsStr.concat(item.toString());
+//            itemsStr.concat(item.toString());
             System.out.println(item.toString());
         }
         return "Donation{" +
-                "items=" + itemsStr +
+                "items=" + items +
                 ", donationDate=" + donationDate +
                 ", donorID=" + donorID +
                 '}';

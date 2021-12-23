@@ -26,8 +26,7 @@ public class SampleController {
     @FXML
     void OnpressLogin(ActionEvent event) {
  
-    	
-    	Boolean check=Orphanage.Login(username.getText(),password.getText());
+   Boolean check=Orphanage.Login(username.getText(),password.getText());
     	if(check==true)
     	{
     		incorrect.setText(null);

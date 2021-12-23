@@ -1,11 +1,15 @@
 package businessLogic;
 
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
 public class Item {
+    @Id
     private int itemID;
     private Date dateOfEntry;
-
+    @ManyToOne
+    private Donation donation;
     public Item() {
     }
 

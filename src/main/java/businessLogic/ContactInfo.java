@@ -1,15 +1,13 @@
 package businessLogic;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 public class ContactInfo {
-    @Id
-	@Column(length = 1000000)
 	private String phoneNumber;
+	@Id
     private String email;
 
 	public ContactInfo() {

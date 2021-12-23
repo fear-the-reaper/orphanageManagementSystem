@@ -1,23 +1,30 @@
 package businessLogic;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Entity
+@Table(name = "parent_tahle")
 public class Parent extends Person {
-    private int parentId;
+	@OneToOne
     private ContactInfo contactInfo;
 
-    public Parent(String name, Date dateOfBirth, String gender, String nationality, Address address, int parentId, ContactInfo contactInfo) {
-        super(name, dateOfBirth, gender, nationality, address);
-        this.setParentId(parentId);
+    public Parent(String cnic,String name, Date dateOfBirth, String gender, String nationality, Address address, int parentId, ContactInfo contactInfo) {
+        super(cnic,name, dateOfBirth, gender, nationality, address);
         this.setContactInfo(contactInfo);
     }
 
-	public int getParentId() {
-		return parentId;
+	public Parent() {
+		// TODO Auto-generated constructor stub
 	}
-
-	public void setParentId(int parentId) {
-		this.parentId = parentId;
+	public Parent(Parent p)
+	{
+		
+	}
+	public 	Parent(Person p) {
+		super(p);
 	}
 
 	public ContactInfo getContactInfo() {

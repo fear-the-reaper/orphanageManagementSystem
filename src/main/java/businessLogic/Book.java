@@ -1,10 +1,23 @@
 package businessLogic;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.sql.Date;
 
+@Entity
+@Table(name = "books_table")
 public class Book extends Item{
+	@ManyToOne
+//	@JoinColumn(name="primaryKey", nullable=false)
     private Title title;
     private String publisher;
+
+	public Book() {
+
+	}
+
 	public Title getTitle() {
 		return title;
 	}
